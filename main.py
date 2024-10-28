@@ -45,6 +45,10 @@ def main():
             if each.collision(player_ship):
                 print("Game over!")
                 sys.exit()
+            for bullet in shots:
+                if bullet.collision(each):
+                    each.split()
+                    bullet.kill()
 
         pygame.display.flip()
 
